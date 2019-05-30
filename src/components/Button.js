@@ -7,15 +7,15 @@ class Button extends Component {
     //static contextType = LanguageContext;  PROVIDER APPROACH
     // ^^Not needed when using a Consumer approach instead of contextType
 
-    renderSubmit(value) {
-        return value === 'english' ? 'Submit' : 'Voorleggen';
+    renderSubmit(language) {
+        return language === 'english' ? 'Submit' : 'Voorleggen';
     }
 
     renderButton(color) {
         return(
             <button className={`ui button ${color}`}>
                 <LanguageContext.Consumer>
-                    {(value) => this.renderSubmit(value)}
+                    {({language}) => this.renderSubmit(language)}
                 </LanguageContext.Consumer>
             </button>
         );
