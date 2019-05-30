@@ -38,11 +38,11 @@ class App extends Component {
 
 export default App;
 
-{/* Wrapping with Provider creates a branch/pipeline with that default value
+/* Wrapping with Provider creates a branch/pipeline with that default value
 WE DONT ALWAYS USE THIS.STATE for def value, it can be a prop or harcoded
 
 <LanguageContext.Provider value={"english"}>
     <UserCreate />
 </LanguageContext.Provider>
 
-<UserCreate/>*/}
+<UserCreate/>*/
