@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import UserCreate from './UserCreate';
+import LanguageContext from '../contexts/LanguageContext';
 
 class App extends Component {
     state = { language: 'english' };
@@ -20,10 +21,21 @@ class App extends Component {
                        onClick={() => this.onLanguageChange('dutch')}
                     />
                 </div>
-                <UserCreate/>
+                <LanguageContext.Provider value={this.state.language}>
+                <UserCreate />
+                </LanguageContext.Provider>
             </div>
         );
     }
 }
 
 export default App;
+
+{/* Wrapping with Provider creates a branch/pipeline with that default value
+WE DONT ALWAYS USE THIS.STATE for def value, it can be a prop or harcoded
+
+<LanguageContext.Provider value={"english"}>
+    <UserCreate />
+</LanguageContext.Provider>
+
+<UserCreate/>*/}
